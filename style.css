@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root {
+    --cor1: #010101;
+    --cor2: #A0A9B2;
+    --cor3: #0E1406;
+    --cor4: #966339;
+    --cor5: #001935;
+    --fonte-padrao: 'Open Sans', sans-serif;
+}
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body {
+    font-family: var(--fonte-padrao);
+    height: 100vh;
+}
+
+.slider-container {
+    position: relative;  /* estudar */
+    overflow: hidden;  /*    O conteúdo é cortado e nenhuma barra de rolagem é exibida. */
+   width: 100vw;
+   height: 100vh;
+}
+
+.left-slide {
+    height: 100%;
+    width: 35%;
+    position: absolute; /* estudar */
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+.left-slide > div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.left-slide > div > h1 {
+    font-size: 70px;
+    margin-bottom: 10px;
+    margin-top: -30px;
+}
+
+.left-slide > div > p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.right-slide {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 35%;
+    width: 65%;
+    transition: transform 0.5s ease-in-out;
+
+}
+
+.right-slide > div {
+    background-repeat: no-repeat; /* a img está no html*/
+    background-size: cover; /* study */
+    background-position: center center; /* X and Y */
+    height: 100%;
+    width: 100%;
+}
+
+button {
+    width: 50px;
+    height: 70px;
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer; /*maozinha */
+    color: #aaa;
+}
+
+button:hover {
+    color: #111;
+}
+
+button:focus {
+    outline: none; /* para nao marcar qnd clicar */
+}
+
+.slider-container .action-buttons button {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    z-index: 100;
+   
+}
+
+.slider-container .action-buttons .down-button {
+    transform: translateX(-100%); /* move ele 100% da largura do elemento para a esquerda(p/ direita, fazer o contrário */
+    border-radius: 20px 0px 0px 20px;
+}
+
+.slider-container .action-buttons .up-button {
+    transform: translateY(-100%);
+    border-radius: 0px 20px 20px 0px;
+}
